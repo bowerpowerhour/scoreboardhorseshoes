@@ -1312,7 +1312,7 @@
 
         function endOfGame() {
           $("#gameComplete").css("visibility", "visible");
-          $("#enterNextInning").hide();
+          $("#enterNextInning").fadeOut();
           alert("GAME OVER\n\n\n" +
           playerOne.name + "  " + playerOne.totalScore() + "\n\n\n" +
           playerTwo.name + "  " + playerTwo.totalScore());
