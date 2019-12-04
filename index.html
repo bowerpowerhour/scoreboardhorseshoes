@@ -472,7 +472,7 @@
             if (currentInning === inningsInGame) {
               checkForWinner();
               endOfGame();
-              document.getElementById("enterNextInning").disabled = true;
+              $("#enterNextInning").hide();
             }
 
             // Check for end of overtime game (if overtime gets coded)
@@ -482,7 +482,9 @@
             $("#allInningStuff").fadeOut();
             $("#inningInformation").fadeIn();
             $("#gameLog").fadeIn();
-            $("#enterNextInning").fadeIn();
+            if (!isGameOver) {
+              $("#enterNextInning").fadeIn();
+            }
           });
         });
 
@@ -1312,7 +1314,7 @@
 
         function endOfGame() {
           $("#gameComplete").css("visibility", "visible");
-          $("#enterNextInning").fadeOut();
+          isGameOver = true;
           alert("GAME OVER\n\n\n" +
           playerOne.name + "  " + playerOne.totalScore() + "\n\n\n" +
           playerTwo.name + "  " + playerTwo.totalScore());
