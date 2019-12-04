@@ -472,7 +472,7 @@
             if (currentInning === inningsInGame) {
               checkForWinner();
               endOfGame();
-              document.getElementById("enterNextInning").disabled = true;
+              $("#enterNextInning").hide();
             }
 
             // Check for end of overtime game (if overtime gets coded)
